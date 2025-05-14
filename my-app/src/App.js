@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -8,11 +9,12 @@ function Counter() {
   }, [count]); // Logs when count changes
 
   return (
-    <div>
-      <h2>Counter App</h2>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+    <div className="app-container">
+      <h1 className="title">Counter App</h1>
+      <h3 className="count">Count: {count}</h3>
+      <button className="button" onClick={() => setCount(count + 1)}>Increment</button>
+      <button className="button" onClick={() => setCount(count - 1)}>Decrement</button>
+      <button className="button" onClick={() => setCount(0)}>Reset</button>
     </div>
   );
 }
